@@ -97,7 +97,7 @@ error	initial_fill(matrix **m, int argc, char *argv[]){
 		(*m)->cells[15][17].alive = true;
 		(*m)->cells[14][16].alive = true;
 		(*m)->cells[16][16].alive = true;
-		printf("example matrix because main wasn't given a filename as an argument\n");
+		printf("example matrix because main wasn't given a command line argument\n");
 	}
 	else{
 		msg = parse_file(m, argv[1]);
@@ -124,7 +124,7 @@ int	main(int argc, char *argv[]){
 	int	i;
 	char	input;
 		
-	msg = initial_fill(&m, argc, argv);//send adress of ptr to matrix so that malloc can properly modify ptr to matrix
+	msg = initial_fill(&m, argc, argv);//send adress of [ptr to matrix] so that malloc can properly modify [ptr to matrix]
 	if (!msg){
 		i = 0;
 		input = 0;
