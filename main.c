@@ -92,8 +92,6 @@ error	initial_fill(matrix **m, int argc, char *argv[]){
 		(*m)->cells[15][14].alive = true;
 		(*m)->cells[15][17].alive = true;
 		(*m)->cells[14][16].alive = true;
-		(*m)->cells[15][15].alive = true;
-		(*m)->cells[15][14].alive = true;
 		(*m)->cells[15][17].alive = true;
 		(*m)->cells[14][16].alive = true;
 		(*m)->cells[16][16].alive = true;
@@ -114,7 +112,8 @@ error	initial_fill(matrix **m, int argc, char *argv[]){
 char	get_input(){
 	char	buffer[200];
 
-	fgets(buffer, sizeof(buffer), stdin);
+	if (fgets(buffer, sizeof(buffer), stdin) == NULL)
+		*buffer = 'q';//exits program if fgets fail to read user input
 	return (*buffer);
 }
 
