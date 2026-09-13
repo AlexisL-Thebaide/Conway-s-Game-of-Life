@@ -5,6 +5,7 @@
 void	game_of_life_step(matrix *m);
 cell	empty_cell(void);
 void	print_cell(cell *to_print);
+bool	cell_in_bounds(matrix *m, int x, int y);
 //matrix.h
 matrix	*new_matrix(int h, int w);
 void	print_matrix(matrix *to_print);

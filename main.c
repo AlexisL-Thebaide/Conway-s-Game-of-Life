@@ -47,7 +47,7 @@ void	fill_from_file(matrix *m, FILE *fp){
 			x = 0;
 		}
 		else{
-			if (!isspace(ch))
+			if (!isspace(ch) && cell_in_bounds(m, x, y))
 				m->cells[y][x].alive = true;
 			x++;
 		}
